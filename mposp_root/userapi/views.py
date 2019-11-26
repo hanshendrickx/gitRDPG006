@@ -1,3 +1,11 @@
 from django.shortcuts import render
+from rest_framework import routers
+from userapi.views import UserViewSet
 
-# Create your views here.
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
+
+urlpatterns = [
+    # other paths
+    path(r'', include(router.urls)),
+]

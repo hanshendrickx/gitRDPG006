@@ -1,15 +1,21 @@
 name: envRDPG006
 channels:
-  - conda-forge/label/gcc7
   - anaconda
+  - conda-forge/label/gcc7
+  - conda-forge
   - defaults
 dependencies:
   - astroid=2.3.3=py37_0
   - babel=2.7.0=py_0
-  - ca-certificates=2019.10.16=0
+  - ca-certificates=2019.9.11=hecc5488_0
   - certifi=2019.9.11=py37_0
+  - cffi=1.13.2=py37hb32ad35_0
+  - cryptography=2.8=py37hb32ad35_0
   - django=2.2.5=py37_1
+  - django-rest-auth=0.9.3=py37_1000
   - djangorestframework=3.8.2=py_0
+  - djangorestframework-jwt=1.11.0=py_0
+  - idna=2.8=py37_1000
   - krb5=1.16.1=hc04afaa_7
   - lazy-object-proxy=1.4.3=py37he774522_0
   - libpq=11.2=h3235a2c_0
@@ -17,6 +23,8 @@ dependencies:
   - pip=19.3.1=py37_0
   - postgresql=11.2=h3235a2c_0
   - psycopg2=2.8.4=py37h7a1dbc1_0
+  - pycparser=2.19=py37_1
+  - pyjwt=1.7.1=py_0
   - python=3.7.5=h8c8aaf0_0
   - pytz=2019.3=py_0
   - setuptools=42.0.1=py37_0
