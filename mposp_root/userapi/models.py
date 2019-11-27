@@ -6,7 +6,10 @@ from django.contrib.auth.models import AbstractUser
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 
-# make email default mandatory UI instead of username
+
+# class User(AbstractUser):
+#    pass
+
 class User(AbstractUser):
     username = models.CharField(blank=True, null=True, max_length=50)
     email = models.EmailField(_('email address'), unique=True)
@@ -17,13 +20,13 @@ class User(AbstractUser):
     def __str__(self):
         return "{}".format(self.email)
 
+
 class UserProfile(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, 
-on_delete=models.CASCADE, related_name='profile')
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     title = models.CharField(max_length=5)
     dob = models.DateField()
     address = models.CharField(max_length=255)
     country = models.CharField(max_length=50)
     city = models.CharField(max_length=50)
     zip = models.CharField(max_length=5)
-
